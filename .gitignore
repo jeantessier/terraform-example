@@ -2,3 +2,6 @@
 .terraform
 *.tfstate
 *.tfstate.backup
+
+# IntelliJ IDEA files
+.idea
