@@ -1,3 +1,9 @@
+variable "server_port" {
+  description = "The port the server will use for HTTP requests"
+  type        = number
+  default     = 8000
+}
+
 data "docker_registry_image" "nginx" {
   name = "nginx:latest"
 }
@@ -13,6 +19,6 @@ resource "docker_container" "nginx" {
   name  = "tutorial"
   ports {
     internal = 80
-    external = 8000
+    external = var.server_port
   }
 }
