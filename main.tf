@@ -1,6 +1,11 @@
+data "docker_registry_image" "nginx" {
+  name = "nginx:latest"
+}
+
 resource "docker_image" "nginx" {
-  name         = "nginx:latest"
-  keep_locally = false
+  name          = data.docker_registry_image.nginx.name
+  keep_locally  = true
+  pull_triggers = [data.docker_registry_image.nginx.sha256_digest]
 }
 
 resource "docker_container" "nginx" {
@@ -11,4 +16,3 @@ resource "docker_container" "nginx" {
     external = 8000
   }
 }
-
