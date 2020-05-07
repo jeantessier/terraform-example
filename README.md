@@ -13,7 +13,7 @@ And influenced by this series of articles by GruntWork:
 
 Start it with:
 
-    $ cd stage
+    $ cd staging
     $ terraform init
     $ terraform apply
 
