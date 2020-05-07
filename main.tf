@@ -1,7 +1,7 @@
 variable "server_port" {
   description = "The port the server will use for HTTP requests"
   type        = number
-  default     = 8000
+  default     = 0
 }
 
 data "docker_registry_image" "nginx" {
@@ -26,4 +26,9 @@ resource "docker_container" "nginx" {
 output "container_name" {
   value = docker_container.nginx.name
   description = "The name of the Docker container"
+}
+
+output "port_number" {
+  value = docker_container.nginx.ports[0].external
+  description = "The port number assigned to the Docker container"
 }
