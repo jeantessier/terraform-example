@@ -1,7 +1,7 @@
 # Terraform data
-.terraform
-*.tfstate
-*.tfstate.backup
+**/.terraform
+**/*.tfstate
+**/*.tfstate.backup
 
 # IntelliJ IDEA files
 .idea
