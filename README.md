@@ -20,7 +20,7 @@ Start it with:
 It will print out the name of the Docker container and the HTTP port to connect
 to it.
 
-Then point your browser to `http://localhost:_<port>_`.
+Then point your browser to `http://localhost:<port>`.
 
 Stop it with:
 
