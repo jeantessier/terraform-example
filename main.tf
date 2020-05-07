@@ -16,9 +16,14 @@ resource "docker_image" "nginx" {
 
 resource "docker_container" "nginx" {
   image = docker_image.nginx.latest
-  name  = "tutorial"
+  name  = "tutorial_${terraform.workspace}"
   ports {
     internal = 80
-    external = var.server_port
+//    external = var.server_port
   }
+}
+
+output "container_name" {
+  value = docker_container.nginx.name
+  description = "The name of the Docker container"
 }
